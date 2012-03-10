@@ -1,9 +1,10 @@
-
 # chrome-spdy-indicator
 
 Chrome Extension to see an indicator of SPDY support in the address bar.
 
 ![](http://f.cl.ly/items/0O0i2U0x0F0h1Y2b0d0F/screen.png)
+
+Twitter seems to not always be served over spdy, checkout any discussion on the project page:
 
 - [Project page](http://www.devthought.com/2012/03/10/chrome-spdy-indicator/)
 - [Chrome Extension page](https://chrome.google.com/webstore/detail/mpbpobfflnpcgagjijhmgnchggcjblin)

@@ -4,24 +4,19 @@
   chrome.extension.onRequest.addListener(function (res, sender) {
     var tab = sender.tab;
 
-    if (null == res.spdy) {
-      // hide page action
-      chrome.pageAction.hide(tab.id);
-    } else {
-      // show page action
-      chrome.pageAction.show(tab.id);
+    // show page action
+    chrome.pageAction.show(tab.id);
 
-      // change icon
-      chrome.pageAction.setIcon({
-          path: 'icon-' + (res.spdy ? '' : 'no-') + 'spdy.png'
-        , tabId: tab.id
-      });
+    // change icon
+    chrome.pageAction.setIcon({
+        path: 'icon-' + (res.spdy ? '' : 'no-') + 'spdy.png'
+      , tabId: tab.id
+    });
 
-      // change icon tooltip
-      chrome.pageAction.setTitle({
-          title: tab.url + (res.spdy ? ' is SPDY-enabled' : ' is NOT SPDY-enabled')
-        , tabId: tab.id
-      });
-    }
+    // change icon tooltip
+    chrome.pageAction.setTitle({
+        title: tab.url + (res.spdy ? ' is SPDY-enabled' : ' is NOT SPDY-enabled')
+      , tabId: tab.id
+    });
   });
 </script>

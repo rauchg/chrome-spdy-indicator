@@ -1,0 +1,15 @@
+{
+    "name": "SPDY indicator"
+  , "description": "An indicator in the address bar for SPDY usage by each website."
+  , "version": "0.1.2"
+  , "permissions": ["tabs"]
+  , "background_page": "indicator.html"
+  , "content_scripts": [{
+        "matches": ["*://*/*"]
+      , "js": ["content.js"]
+      , "run_at": "document_start"
+    }]
+  , "page_action": {
+        "default_title": "SPDY"
+    }
+}

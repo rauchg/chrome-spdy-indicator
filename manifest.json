@@ -1,7 +1,7 @@
 {
-    "name": "SPDY only indicator"
-  , "description": "An indicator in the address bar for SPDY usage by each website that uses SPDY. No icon is added to pages that do not use SPDY."
-  , "version": "0.1.2"
+    "name": "SPDY indicator"
+  , "description": "An indicator in the address bar for SPDY usage by each website. Options allow configuration of whether or not to show an icon on pages that don't use SPDY."
+  , "version": "0.2.0"
   , "permissions": ["tabs"]
   , "background_page": "indicator.html"
   , "content_scripts": [{
@@ -12,4 +12,5 @@
   , "page_action": {
         "default_title": "SPDY"
     }
+  , "options_page": "options.html"
 }

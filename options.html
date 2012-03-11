@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<title>SPDY Indicator Options</title>
+<script type="text/javascript">
+function saveOptions() {
+  var checkbox = document.getElementById("hideNoSpdy");
+  localStorage["hideNoSpdy"] = checkbox.checked ? "true" : "";
+
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 3000);
+}
+
+function restoreOptions() {
+  var checkbox = document.getElementById("hideNoSpdy");
+  if (localStorage["hideNoSpdy"]) {
+    checkbox.checked = true;
+  }
+}
+</script>
+</head>
+<body onload="restoreOptions()">
+<div>
+  <input type="checkbox" id="hideNoSpdy" style="margin-right:10px"/><label for="hideNoSpdy">Hide gray SPDY indicator icon on pages not using SPDY</label>
+</div>
+<div style="margin-top:10px">
+  <button onclick="saveOptions()">Save</button>
+  <span id="status" style="margin-left:15px"></span>
+</div>
+</body>
+</html>

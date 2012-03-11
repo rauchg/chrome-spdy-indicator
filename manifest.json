@@ -1,6 +1,6 @@
 {
     "name": "SPDY indicator"
-  , "description": "An indicator in the address bar for SPDY usage by each website. Options allow configuration of whether or not to show an icon on pages that don't use SPDY."
+  , "description": "An indicator in the address bar for SPDY usage by each website."
   , "version": "0.2.0"
   , "permissions": ["tabs"]
   , "background_page": "indicator.html"

@@ -8,6 +8,21 @@ Chrome Extension to see an indicator of SPDY support in the address bar.
 - [Project page](http://www.devthought.com/2012/03/10/chrome-spdy-indicator/)
 - [Chrome Extension page](https://chrome.google.com/webstore/detail/mpbpobfflnpcgagjijhmgnchggcjblin)
 
+## Changelog
+
+**0.2.0 / 2012-03-11**
+
+  * Added settings page with "hide inactive icon" option. [eakret]
+  * Fixed icon transparency and replaced with Glyph Icon.
+
+**0.1.0 / 2012-03-10**
+
+  * Initial release
+
+## Credits
+
+Address bar Icon by http://glyphicons.com/ - cc license
+
 ## License 
 
 (The MIT License)

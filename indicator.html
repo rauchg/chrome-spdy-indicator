@@ -3,7 +3,7 @@
 <script>
   chrome.extension.onRequest.addListener(function (res, sender) {
     var tab = sender.tab;
-    var showNoSpdy = !localStorage["hideNoSpdy"];
+    var showNoSpdy = !localStorage['hideNoSpdy'];
 
     if (res.spdy || showNoSpdy) {
       // show page action

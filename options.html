@@ -43,7 +43,7 @@
     , field = document.getElementById('field')
 
   // populate existing state
-  checkbox.checked = !!localStorage.hideNoSPDY;
+  checkbox.checked = !!Number(localStorage.hideNoSPDY);
 
   // click listener
   checkbox.addEventListener('click', function () {

@@ -17,7 +17,7 @@
 
       // change icon tooltip
       chrome.pageAction.setTitle({
-          title: tab.url + (res.spdy ? ' is SPDY-enabled' : 'is NOT SPDY-enabled')
+          title: tab.url + (res.spdy ? ' is SPDY-enabled' : ' is NOT SPDY-enabled')
         , tabId: tab.id
       });
     } else {

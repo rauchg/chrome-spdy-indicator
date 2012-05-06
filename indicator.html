@@ -1,6 +1,14 @@
 <!doctype html>
 <title>SPDY Indicator</title>
 <script>
+  function onPageActionClicked (tab) {
+    chrome.tabs.create({
+      index: tab.index + 1,
+      url: 'chrome://net-internals/#spdy',
+      openerTabId: tab.id
+    });
+  }
+
   chrome.extension.onRequest.addListener(function (res, sender) {
     var tab = sender.tab
       , showNoSpdy = !Number(localStorage.hideNoSPDY)
@@ -20,6 +28,11 @@
           title: tab.url + (res.spdy ? ' is SPDY-enabled' : ' is NOT SPDY-enabled')
         , tabId: tab.id
       });
+
+      // set click destination
+      if (!chrome.pageAction.onClicked.hasListener(onPageActionClicked)) {
+        chrome.pageAction.onClicked.addListener(onPageActionClicked);
+      }
     } else {
       chrome.pageAction.hide(tab.id);
     }

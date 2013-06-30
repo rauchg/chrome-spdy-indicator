@@ -15,14 +15,36 @@ chrome.extension.onRequest.addListener(function (res, sender) {
     chrome.pageAction.show(tab.id);
 
     // change icon
+    var icon;
+    if (res.spdy) {
+      switch (res.info) {
+        case 'spdy/2':
+          icon = 'sdpy2';
+          break;
+        case 'spdy/3':
+          icon = 'spdy3';
+          break;
+        case 'spdy/4':
+          icon = 'spdy4';
+          break;
+        case 'quic/1+spdy/3':
+          icon = 'quic';
+          break;
+        default:
+          icon = 'spdy';
+          break;
+      }
+    } else {
+      icon = 'no-spdy';
+    }
     chrome.pageAction.setIcon({
-        path: 'icon-' + (res.spdy ? '' : 'no-') + 'spdy.png'
+        path: 'icon-' + icon + '.png'
       , tabId: tab.id
     });
 
     // change icon tooltip
     chrome.pageAction.setTitle({
-        title: tab.url + (res.spdy ? ' is SPDY-enabled' : ' is NOT SPDY-enabled')
+        title: tab.url + (res.spdy ? ' is SPDY-enabled(' + res.info + ')' : ' is NOT SPDY-enabled')
       , tabId: tab.id
     });
 

@@ -17,22 +17,16 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
     // change icon
     var icon;
     if (res.spdy) {
-      switch (res.info) {
-        case 'spdy/2':
-          icon = 'spdy2';
-          break;
-        case 'spdy/3':
-          icon = 'spdy3';
-          break;
-        case 'spdy/4':
-          icon = 'spdy4';
-          break;
-        case 'quic/1+spdy/3':
-          icon = 'quic';
-          break;
-        default:
-          icon = 'spdy';
-          break;
+      if (res.info.match(/^spdy\/2/)) {
+        icon = 'spdy2';
+      } else if (res.info.match(/^spdy\/3/)) {
+        icon = 'spdy3';
+      } else if (res.info.match(/^spdy\/4/)) {
+        icon = 'spdy4';
+      } else if (res.info.match(/^quic\//)) {
+        icon = 'quic';
+      } else {
+        icon = 'spdy';
       }
     } else {
       icon = 'no-spdy';

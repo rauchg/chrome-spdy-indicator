@@ -56,3 +56,9 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
     chrome.pageAction.hide(tab.id);
   }
 });
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  if(changeInfo.status == "complete") {
+    chrome.tabs.sendMessage(tabId, {});
+  }
+});

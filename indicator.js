@@ -6,7 +6,7 @@ function onPageActionClicked (tab) {
   });
 }
 
-chrome.extension.onRequest.addListener(function (res, sender) {
+chrome.runtime.onMessage.addListener(function (res, sender) {
   var tab = sender.tab
     , showNoSpdy = !Number(localStorage.hideNoSPDY)
 

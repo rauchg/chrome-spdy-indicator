@@ -1,6 +1,6 @@
 var loadTimes = window.chrome.loadTimes();
 // send spdy bool for current page
-chrome.extension.sendRequest({
+chrome.runtime.sendMessage({
   spdy: loadTimes.wasFetchedViaSpdy,
   info: loadTimes.connectionInfo || loadTimes.npnNegotiatedProtocol
 });

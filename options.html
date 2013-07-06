@@ -1,56 +1,45 @@
 <!doctype html>
-<title>SPDY Indicator Options</title>
+<html>
+  <head>
+    <title>SPDY Indicator Options</title>
+    
+    <style>
+      body {
+        padding: 25px 100px;
+        font-family: "Linux Libertine", Palatino Linotype
+      }
+    
+      #field {
+        padding: 10px;
+        background: #eee;
+        -webkit-transition: background ease-in 200ms;
+        -moz-transition: background ease-in 200ms;
+        transition: background ease-in 200ms;
+        cursor: pointer;
+        display: block;
+        text-shadow: 0 1px 0 #fff;
+        font: 13px "Lucida Grande", Verdana;
+        border: 1px solid #eee;
+      }
+    
+      #field:hover {
+        border-color: #ccc;
+      }
+    
+      #field.saved {
+        background-color: #ffefc6;
+      }
+    </style>
+    <script src="options.js"></script>
+  </head>
+  <body>
 
-<style>
-  body {
-    padding: 25px 100px;
-    font-family: "Linux Libertine", Palatino Linotype
-  }
-
-  #field {
-    padding: 10px;
-    background: #eee;
-    -webkit-transition: background ease-in 200ms;
-    -moz-transition: background ease-in 200ms;
-    transition: background ease-in 200ms;
-    cursor: pointer;
-    display: block;
-    text-shadow: 0 1px 0 #fff;
-    font: 13px "Lucida Grande", Verdana;
-    border: 1px solid #eee;
-  }
-
-  #field:hover {
-    border-color: #ccc;
-  }
-
-  #field.saved {
-    background-color: #ffefc6;
-  }
-</style>
-
-<h1>SPDY Indicator</h1>
-<h2>Preferences</h2>
-
-<label id="field">
-  <input type="checkbox" id="checkbox" />
-  Hide gray SPDY indicator icon on pages not using SPDY
-</label>
-
-<script type="text/javascript">
-  // elements we reference
-  var checkbox = document.getElementById('checkbox')
-    , field = document.getElementById('field')
-
-  // populate existing state
-  checkbox.checked = !!Number(localStorage.hideNoSPDY);
-
-  // click listener
-  checkbox.addEventListener('click', function () {
-    localStorage.hideNoSPDY = Number(checkbox.checked);
-    field.className = 'saved';
-    setTimeout(function () {
-      field.className = '';
-    }, 200);
-  });
-</script>
+    <h1>SPDY Indicator</h1>
+    <h2>Preferences</h2>
+    
+    <label id="field">
+      <input type="checkbox" id="checkbox" />
+      Hide gray SPDY indicator icon on pages not using SPDY
+    </label>
+  </body>
+</html>

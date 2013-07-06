@@ -1,8 +1,10 @@
 function onPageActionClicked (tab) {
-  chrome.tabs.create({
-    index: tab.index + 1,
-    url: 'chrome://net-internals/#spdy',
-    openerTabId: tab.id
+  chrome.pageAction.getTitle({tabId: tab.id}, function(result) {
+    chrome.tabs.create({
+      index: tab.index + 1,
+      url: 'chrome://net-internals/#' + (result.match(/QUIC/) ? 'quic' : 'spdy'),
+      openerTabId: tab.id
+    });
   });
 }
 
@@ -14,9 +16,9 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
     // show page action
     chrome.pageAction.show(tab.id);
 
-    // change icon
-    var icon;
+    var icon, tooltip;
     if (res.spdy) {
+      tooltip = 'SPDY';
       if (res.info.match(/^spdy\/2/)) {
         icon = 'spdy2';
       } else if (res.info.match(/^spdy\/3/)) {
@@ -25,12 +27,16 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
         icon = 'spdy4';
       } else if (res.info.match(/^quic\//)) {
         icon = 'quic';
+        tooltip = 'QUIC';
       } else {
         icon = 'spdy';
       }
     } else {
       icon = 'no-spdy';
+      tooltip = 'NOT SPDY';
     }
+
+    // change icon
     chrome.pageAction.setIcon({
         path: 'icon-' + icon + '.png'
       , tabId: tab.id
@@ -38,7 +44,7 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
 
     // change icon tooltip
     chrome.pageAction.setTitle({
-        title: tab.url + (res.spdy ? ' is SPDY-enabled(' + res.info + ')' : ' is NOT SPDY-enabled')
+        title: tab.url + ' is ' + tooltip + '-enabled' + (res.spdy ? '(' + res.info + ')' : '')
       , tabId: tab.id
     });
 

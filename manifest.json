@@ -19,6 +19,9 @@
         "default_title": "SPDY"
     }
   , "options_page": "options.html"
+  , "web_accessible_resources": [
+        "options.js"
+    ]
   , "icons": {
         "128": "icon.png"
     }

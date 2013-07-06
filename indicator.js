@@ -1,12 +1,14 @@
 function onPageActionClicked (tab) {
-  chrome.tabs.create({
-    index: tab.index + 1,
-    url: 'chrome://net-internals/#spdy',
-    openerTabId: tab.id
+  chrome.pageAction.getTitle({tabId: tab.id}, function(result) {
+    chrome.tabs.create({
+      index: tab.index + 1,
+      url: 'chrome://net-internals/#' + (result.match(/QUIC/) ? 'quic' : 'spdy'),
+      openerTabId: tab.id
+    });
   });
 }
 
-chrome.extension.onRequest.addListener(function (res, sender) {
+chrome.runtime.onMessage.addListener(function (res, sender) {
   var tab = sender.tab
     , showNoSpdy = !Number(localStorage.hideNoSPDY)
 
@@ -14,29 +16,27 @@ chrome.extension.onRequest.addListener(function (res, sender) {
     // show page action
     chrome.pageAction.show(tab.id);
 
-    // change icon
-    var icon;
+    var icon, tooltip;
     if (res.spdy) {
-      switch (res.info) {
-        case 'spdy/2':
-          icon = 'sdpy2';
-          break;
-        case 'spdy/3':
-          icon = 'spdy3';
-          break;
-        case 'spdy/4':
-          icon = 'spdy4';
-          break;
-        case 'quic/1+spdy/3':
-          icon = 'quic';
-          break;
-        default:
-          icon = 'spdy';
-          break;
+      tooltip = 'SPDY';
+      if (res.info.match(/^spdy\/2/)) {
+        icon = 'spdy2';
+      } else if (res.info.match(/^spdy\/3/)) {
+        icon = 'spdy3';
+      } else if (res.info.match(/^spdy\/4/)) {
+        icon = 'spdy4';
+      } else if (res.info.match(/^quic\//)) {
+        icon = 'quic';
+        tooltip = 'QUIC';
+      } else {
+        icon = 'spdy';
       }
     } else {
       icon = 'no-spdy';
+      tooltip = 'NOT SPDY';
     }
+
+    // change icon
     chrome.pageAction.setIcon({
         path: 'icon-' + icon + '.png'
       , tabId: tab.id
@@ -44,7 +44,7 @@ chrome.extension.onRequest.addListener(function (res, sender) {
 
     // change icon tooltip
     chrome.pageAction.setTitle({
-        title: tab.url + (res.spdy ? ' is SPDY-enabled(' + res.info + ')' : ' is NOT SPDY-enabled')
+        title: tab.url + ' is ' + tooltip + '-enabled' + (res.spdy ? '(' + res.info + ')' : '')
       , tabId: tab.id
     });
 
@@ -54,5 +54,11 @@ chrome.extension.onRequest.addListener(function (res, sender) {
     }
   } else {
     chrome.pageAction.hide(tab.id);
+  }
+});
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  if(changeInfo.status == "complete") {
+    chrome.tabs.sendMessage(tabId, {});
   }
 });

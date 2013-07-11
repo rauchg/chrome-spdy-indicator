@@ -19,7 +19,7 @@ chrome.extension.onRequest.addListener(function (res, sender) {
     if (res.spdy) {
       switch (res.info) {
         case 'spdy/2':
-          icon = 'sdpy2';
+          icon = 'spdy2';
           break;
         case 'spdy/3':
           icon = 'spdy3';

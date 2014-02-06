@@ -10,6 +10,15 @@ Chrome Extension to see an indicator of SPDY support in the address bar.
 
 ## Changelog
 
+**0.5.0 / 2014-02-06**
+
+  * Set npnNegotiatedProtocol as default info to show spdy/3.1 [matsuu]
+  * Added icon for spdy/3.1 [matsuu]
+
+**0.4.0 / 2013-07-23**
+
+  * Fixed SPDY2 icon and added QUIC [matsuu]
+
 **0.2.0 / 2012-03-11**
 
   * Added settings page with "hide inactive icon" option. [eakret]

@@ -1,4 +1,10 @@
 
+0.5.0 / 2014-02-06
+==================
+
+ * set npnNegotiatedProtocol as default info to show spdy/3.1
+ * add icon for spdy/3.1
+
 0.2.0 / 2012-03-11
 ==================
 

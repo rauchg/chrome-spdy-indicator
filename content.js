@@ -3,6 +3,6 @@ chrome.runtime.onMessage.addListener(function (res, sender, sendResponse) {
   // send spdy info for current page
   chrome.runtime.sendMessage({
     spdy: loadTimes.wasFetchedViaSpdy,
-    info: loadTimes.connectionInfo || loadTimes.npnNegotiatedProtocol
+    info: loadTimes.npnNegotiatedProtocol || loadTimes.connectionInfo
   });
 });

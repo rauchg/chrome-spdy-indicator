@@ -21,6 +21,8 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
       tooltip = 'SPDY';
       if (res.info.match(/^spdy\/2/)) {
         icon = 'spdy2';
+      } else if (res.info.match(/^spdy\/3\.1/)) {
+        icon = 'spdy3.1';
       } else if (res.info.match(/^spdy\/3/)) {
         icon = 'spdy3';
       } else if (res.info.match(/^spdy\/4/)) {

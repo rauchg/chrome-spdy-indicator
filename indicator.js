@@ -46,7 +46,7 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
 
     // change icon tooltip
     chrome.pageAction.setTitle({
-        title: tab.url + ' is ' + tooltip + '-enabled' + (res.spdy ? '(' + res.info + ')' : '')
+        title: tooltip + '-enabled' + (res.spdy ? '(' + res.info + ')' : '')
       , tabId: tab.id
     });
 

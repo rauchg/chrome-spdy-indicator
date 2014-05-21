@@ -30,6 +30,9 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
       } else if (res.info.match(/^quic\//)) {
         icon = 'quic';
         tooltip = 'QUIC';
+      } else if (res.info.match(/^h2/)) {
+        icon = 'http2';
+        tooltip = 'HTTP/2';
       } else {
         icon = 'spdy';
       }

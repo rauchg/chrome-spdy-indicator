@@ -10,6 +10,10 @@ Chrome Extension to see an indicator of SPDY support in the address bar.
 
 ## Changelog
 
+**0.6.0 / 2014-05-21**
+
+  * Added support for HTTP/2.0 [matsuu]
+
 **0.5.0 / 2014-02-06**
 
   * Set npnNegotiatedProtocol as default info to show spdy/3.1 [matsuu]

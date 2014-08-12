@@ -27,6 +27,8 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
         icon = 'spdy3';
       } else if (res.info.match(/^spdy\/4/)) {
         icon = 'spdy4';
+      } else if (res.info.match(/^spdy\/5/)) {
+        icon = 'spdy5';
       } else if (res.info.match(/^quic\//)) {
         icon = 'quic';
         tooltip = 'QUIC';

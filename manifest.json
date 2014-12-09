@@ -1,7 +1,7 @@
 {
     "name": "SPDY indicator"
   , "description": "An indicator in the address bar for SPDY usage by each website."
-  , "version": "0.6.0"
+  , "version": "0.7.0"
   , "manifest_version": 2
   , "permissions": ["tabs"]
   , "background": {

@@ -1,4 +1,11 @@
 
+0.7.0 / 2014-12-09
+==================
+
+ * added new icon
+ * Fix to work with spdy/5a1
+ * Omit URL from tooltip
+
 0.6.0 / 2014-05-21
 ==================
 

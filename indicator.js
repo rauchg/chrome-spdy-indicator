@@ -10,7 +10,7 @@ function onPageActionClicked (tab) {
 
 chrome.runtime.onMessage.addListener(function (res, sender) {
   var tab = sender.tab
-    , showNoSpdy = !Number(localStorage.hideNoSPDY)
+    , showNoSpdy = !Number(localStorage.hideNoSPDY);
 
   if (res.spdy || showNoSpdy) {
     // show page action

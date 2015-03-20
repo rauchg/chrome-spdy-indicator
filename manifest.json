@@ -1,7 +1,7 @@
 {
-    "name": "SPDY indicator"
-  , "description": "An indicator in the address bar for SPDY usage by each website."
-  , "version": "0.7.0"
+    "name": "HTTP/2 and SPDY indicator"
+  , "description": "An indicator in the address bar for HTTP/2 and SPDY support by each website."
+  , "version": "0.7.1"
   , "manifest_version": 2
   , "permissions": ["tabs"]
   , "background": {
@@ -16,7 +16,7 @@
       , "run_at": "document_start"
     }]
   , "page_action": {
-        "default_title": "SPDY"
+        "default_title": "HTTP/2 and SPDY"
     }
   , "options_page": "options.html"
   , "web_accessible_resources": [

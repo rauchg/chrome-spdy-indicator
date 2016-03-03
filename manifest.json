@@ -18,7 +18,8 @@
   , "page_action": {
         "default_title": "HTTP/2 and SPDY"
       , "default_icon": {
-        "19": "icon-no-spdy.png"
+        "19": "icon-default.png"
+      , "38": "icon-default-scale2.png"
       }
     }
   , "options_page": "options.html"

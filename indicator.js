@@ -63,3 +63,9 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
     chrome.pageAction.hide(tab.id);
   }
 });
+
+// For preloaded pages, the message might've been sent already
+// This forces a new message in case this happened
+chrome.tabs.onReplaced.addListener(function(addedTabId, removedTabId) {
+  chrome.tabs.sendMessage(addedTabId, {});
+});

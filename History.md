@@ -1,4 +1,18 @@
 
+1.0.0 / 2016-03-11
+==================
+
+  * Listeners have to be registered on every event page load
+  * Query the tab again in case it was swapped in by preload Fixes rauchg/chrome-spdy-indicator#32
+  * Make content script message background without prompting
+  * Switch to Event page model for background
+  * OptiPNG optimize (level 7)
+  * Slight redesign of the main icon
+  * Made the transition default -> none less jarring
+  * Add 38x38 scale icons
+  * Add default icon to prevent flashing of extension icon
+  * Fix chrome://net-internals/#spdy -> chrome://net-internals/#http2
+
 0.7.1 / 2015-03-20
 ==================
 

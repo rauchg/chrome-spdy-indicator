@@ -1,62 +1,18 @@
-
 # chrome-spdy-indicator
 
-Chrome Extension to see an indicator of SPDY support in the address bar.
+Chrome Extension to see an indicator of **HTTP/2, SPDY and QUIC** support.
 
-![](http://f.cl.ly/items/0O0i2U0x0F0h1Y2b0d0F/screen.png)
+[Click here to install!](https://chrome.google.com/webstore/detail/mpbpobfflnpcgagjijhmgnchggcjblin)
 
-- [Project page](http://www.devthought.com/2012/03/10/chrome-spdy-indicator/)
-- [Chrome Extension page](https://chrome.google.com/webstore/detail/mpbpobfflnpcgagjijhmgnchggcjblin)
-
-## Changelog
-
-**0.6.0 / 2014-05-21**
-
-  * Added support for HTTP/2.0 [matsuu]
-
-**0.5.0 / 2014-02-06**
-
-  * Set npnNegotiatedProtocol as default info to show spdy/3.1 [matsuu]
-  * Added icon for spdy/3.1 [matsuu]
-
-**0.4.0 / 2013-07-23**
-
-  * Fixed SPDY2 icon and added QUIC [matsuu]
-
-**0.2.0 / 2012-03-11**
-
-  * Added settings page with "hide inactive icon" option. [eakret]
-  * Fixed icon transparency and replaced with Glyph Icon.
-
-**0.1.0 / 2012-03-10**
-
-  * Initial release
+![](https://cldup.com/dGlS1JaxIo.png)
 
 ## Credits
 
-Address bar Icon by http://glyphicons.com/ - cc license
+- Created by [@rauchg](https://twitter.com/rauchg).
+- Icon taken from [IconFinder](https://www.iconfinder.com/icons/211696/bolt_icon) (MIT License)
+- Font taken from [FontSquirrel](http://www.fontsquirrel.com/fonts/Silkscreen) (own [free-to-use license](http://www.fontsquirrel.com/license/Silkscreen))
+- Thanks to [MATSUU Takuto](https://github.com/matsuu), [Alexander Kashev](https://github.com/kav2k) and [all our contributors](https://github.com/rauchg/chrome-spdy-indicator/graphs/contributors).
 
 ## License 
 
-(The MIT License)
-
-Copyright (c) 2011 Guillermo Rauch &lt;guillermo@learnboost.com&gt;
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+MIT

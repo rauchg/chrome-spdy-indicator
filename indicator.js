@@ -2,7 +2,7 @@ function onPageActionClicked (tab) {
   chrome.pageAction.getTitle({tabId: tab.id}, function(result) {
     chrome.tabs.create({
       index: tab.index + 1,
-      url: 'chrome://net-internals/#' + (result.match(/QUIC/) ? 'quic' : 'spdy'),
+      url: 'chrome://net-internals/#' + (result.match(/QUIC/) ? 'quic' : 'http2'),
       openerTabId: tab.id
     });
   });

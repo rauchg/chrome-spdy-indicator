@@ -17,12 +17,17 @@
     }]
   , "page_action": {
         "default_title": "HTTP/2 and SPDY"
+      , "default_icon": {
+        "19": "icon-default.png"
+      , "38": "icon-default-scale2.png"
+      }
     }
   , "options_page": "options.html"
   , "web_accessible_resources": [
         "options.js"
     ]
   , "icons": {
-        "128": "icon.png"
+        "48": "icon48.png"
+      , "128": "icon.png"
     }
 }

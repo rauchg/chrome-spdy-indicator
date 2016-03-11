@@ -45,7 +45,10 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
 
     // change icon
     chrome.pageAction.setIcon({
-        path: 'icon-' + icon + '.png'
+        path: {
+          '19': 'icon-' + icon + '.png'
+        , '38': 'icon-' + icon + '-scale2.png'
+        }
       , tabId: tab.id
     });
 

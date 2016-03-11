@@ -4,7 +4,7 @@ Chrome Extension to see an indicator of **HTTP/2, SPDY and QUIC** support.
 
 [Click here to install!](https://chrome.google.com/webstore/detail/mpbpobfflnpcgagjijhmgnchggcjblin)
 
-![](https://cldup.com/dGlS1JaxIo.png)
+![](https://cldup.com/0q97H44Apt.png)
 
 ## Credits
 

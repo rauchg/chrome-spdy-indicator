@@ -54,11 +54,6 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
         title: tooltip + '-enabled' + (res.spdy ? '(' + res.info + ')' : '')
       , tabId: tab.id
     });
-
-    // set click destination
-    if (!chrome.pageAction.onClicked.hasListener(onPageActionClicked)) {
-      chrome.pageAction.onClicked.addListener(onPageActionClicked);
-    }
   } else {
     chrome.pageAction.hide(tab.id);
   }
@@ -69,3 +64,5 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
 chrome.tabs.onReplaced.addListener(function(addedTabId, removedTabId) {
   chrome.tabs.sendMessage(addedTabId, {});
 });
+
+chrome.pageAction.onClicked.addListener(onPageActionClicked);

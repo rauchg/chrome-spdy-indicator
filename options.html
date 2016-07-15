@@ -2,18 +2,15 @@
 <html>
   <head>
     <title>SPDY Indicator Options</title>
-    
     <style>
       body {
         padding: 25px 100px;
         font-family: "Linux Libertine", Palatino Linotype
       }
-    
+
       #field {
         padding: 10px;
         background: #eee;
-        -webkit-transition: background ease-in 200ms;
-        -moz-transition: background ease-in 200ms;
         transition: background ease-in 200ms;
         cursor: pointer;
         display: block;
@@ -21,11 +18,11 @@
         font: 13px "Lucida Grande", Verdana;
         border: 1px solid #eee;
       }
-    
+
       #field:hover {
         border-color: #ccc;
       }
-    
+
       #field.saved {
         background-color: #ffefc6;
       }
@@ -33,10 +30,8 @@
     <script src="options.js"></script>
   </head>
   <body>
-
     <h1>SPDY Indicator</h1>
     <h2>Preferences</h2>
-    
     <label id="field">
       <input type="checkbox" id="checkbox" />
       Hide gray SPDY indicator icon on pages not using SPDY

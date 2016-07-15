@@ -13,6 +13,6 @@ Chrome Extension to see an indicator of **HTTP/2, SPDY and QUIC** support.
 - Font taken from [FontSquirrel](http://www.fontsquirrel.com/fonts/Silkscreen) (own [free-to-use license](http://www.fontsquirrel.com/license/Silkscreen))
 - Thanks to [MATSUU Takuto](https://github.com/matsuu), [Alexander Kashev](https://github.com/kav2k) and [all our contributors](https://github.com/rauchg/chrome-spdy-indicator/graphs/contributors).
 
-## License 
+## License
 
 MIT

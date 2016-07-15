@@ -13,7 +13,6 @@ chrome.runtime.onMessage.addListener(function (res, sender) {
     , showNoSpdy = !Number(localStorage.hideNoSPDY);
 
   if (res.spdy || showNoSpdy) {
-    // show page action
     chrome.pageAction.show(tab.id);
 
     var icon, tooltip;

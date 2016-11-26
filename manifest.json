@@ -13,7 +13,6 @@
   , "content_scripts": [{
         "matches": ["*://*/*"]
       , "js": ["content.js"]
-      , "run_at": "document_start"
     }]
   , "page_action": {
         "default_title": "HTTP/2 and SPDY"

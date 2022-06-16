@@ -1,7 +1,7 @@
 {
     "name": "HTTP/2 and SPDY indicator"
   , "description": "An indicator button for HTTP/2, SPDY and QUIC support by each website."
-  , "version": "1.0.0"
+  , "version": "1.0.1"
   , "manifest_version": 2
   , "background": {
         "persistent": false
